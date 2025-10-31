@@ -1,0 +1,310 @@
+{
+  "appTitle": "Financial Association",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "currency": "Currency",
+  "@currency": {
+    "description": "Currency label"
+  },
+  "selectCurrency": "Select Currency",
+  "@selectCurrency": {
+    "description": "Title for currency selection dialog"
+  },
+  "jordanianDinar": "Jordanian Dinar",
+  "@jordanianDinar": {
+    "description": "Name of Jordanian currency"
+  },
+  "saudiRiyal": "Saudi Riyal",
+  "@saudiRiyal": {
+    "description": "Name of Saudi currency"
+  },
+  "emiratiDirham": "Emirati Dirham",
+  "@emiratiDirham": {
+    "description": "Name of UAE currency"
+  },
+  "createAssociation": "Create Association",
+  "myAssociations": "My Associations",
+  "invitations": "Invitations",
+  "financialCommitments": "Financial Commitments",
+  "settings": "Settings",
+  "appSettings": "App Settings",
+  "darkMode": "Dark Mode",
+  "language": "Language",
+  "currentLanguage": "English",
+  "english": "English",
+  "arabic": "Arabic",
+  "logout": "Sign Out",
+  "login": "Sign In",
+  "register": "Sign Up",
+  "username": "Username",
+  "password": "Password",
+  "email": "Email",
+  "confirmPassword": "Confirm Password",
+  "createAccount": "Create Account",
+  "alreadyHaveAccount": "Already have an account?",
+  "dontHaveAccount": "Don't have an account?",
+  "associationName": "Association Name",
+  "monthlyContribution": "Monthly Contribution",
+  "numberOfMembers": "Number of Members",
+  "description": "Description",
+  "create": "Create",
+  "cancel": "Cancel",
+  "members": "Members",
+  "admin": "Admin",
+  "payoutMonth": "Payout Month",
+  "inviteMembers": "Invite Members",
+  "availableSpots": "Available Spots",
+  "enterUsername": "Enter username to invite",
+  "invite": "Invite",
+  "pendingInvitations": "Pending Invitations",
+  "accept": "Accept",
+  "decline": "Decline",
+  "noAssociations": "No associations found",
+  "noInvitations": "No pending invitations",
+  "noCommitments": "No financial commitments",
+  "addCommitment": "Add Commitment",
+  "commitmentName": "Commitment Name",
+  "monthlyAmount": "Monthly Amount",
+  "startDate": "Start Date",
+  "endDate": "End Date",
+  "dueDate": "Due Date",
+  "selectDate": "Select Date",
+  "delete": "Delete",
+  "error": "Error",
+  "success": "Success",
+  "loading": "Loading...",
+  "save": "Save",
+  "edit": "Edit",
+  "profile": "Profile",
+  "changePassword": "Change Password",
+  "currentPassword": "Current Password",
+  "newPassword": "New Password",
+  "confirmNewPassword": "Confirm New Password",
+  "updateProfile": "Update Profile",
+  "updatePassword": "Update Password",
+  "notifications": "Notifications",
+  "paymentSummary": "Payment Summary",
+  "nextPayment": "Next Payment",
+  "daysUntilPayment": "Days Until Payment",
+  "totalMonthlyCommitments": "Total Monthly Commitments",
+  "totalRemainingAmount": "Total Remaining Amount",
+  "yourPayout": "Your Payout: Month {month}",
+  "deleteAssociation": "Delete Association",
+  "leaveAssociation": "Leave Association",
+  "deleteAssociationConfirm": "Are you sure you want to delete this association? This action cannot be undone.",
+  "leaveAssociationConfirm": "Are you sure you want to leave this association? You will lose access to all association data.",
+  "associationDeleted": "Association deleted successfully",
+  "leftAssociation": "Left association successfully",
+  "manageParticipants": "Manage Participants",
+  "on": "on",
+  "details": "Details",
+  "payments": "Payments",
+  "associationInformation": "Association Information",
+  "totalAmount": "Total Amount",
+  "status": "Status",
+  "drawStatus": "Draw Status",
+  "completed": "Completed",
+  "pending": "Pending",
+  "yourPayoutMonth": "Your Payout Month",
+  "month": "Month",
+  "adminActions": "Admin Actions",
+  "performDraw": "Perform Draw",
+  "paymentInformation": "Payment Information",
+  "amountDue": "Amount Due",
+  "membersStatus": "Members Status",
+  "close": "Close",
+  "updatePayment": "Update Payment",
+  "paymentUpdated": "Payment updated successfully!",
+  "performDrawConfirm": "This will randomly assign payout months to all members. This action cannot be undone. Are you sure you want to continue?",
+  "confirm": "Confirm",
+  "drawCompleted": "Draw completed successfully!",
+  "invitationSent": "Invitation sent successfully",
+  "invitationCancelled": "Invitation cancelled",
+  "removeMember": "Remove Member",
+  "removeMemberConfirm": "Are you sure you want to remove this member from the association?",
+  "remove": "Remove",
+  "memberRemoved": "Member removed successfully",
+  "amount": "Amount",
+  "amountTooHigh": "Amount cannot be higher than monthly contribution",
+  "noMembersToSwap": "No members available to swap months with",
+  "selectMemberToSwap": "Select member to swap months with",
+  "monthsSwapped": "Months swapped successfully",
+  "@monthsSwapped": {
+    "description": "Success message shown when months are swapped"
+  },
+  "signIn": "Sign In",
+  "errorLoadingMembers": "Error loading members",
+  "noMembers": "No members found",
+  "unknownMember": "Unknown Member",
+  "january": "January",
+  "february": "February",
+  "march": "March",
+  "april": "April",
+  "may": "May",
+  "june": "June",
+  "july": "July",
+  "august": "August",
+  "september": "September",
+  "october": "October",
+  "november": "November",
+  "december": "December",
+  "friendRequests": "Friend Requests",
+  "associationInvites": "Association Invites",
+  "noFriendRequests": "No friend requests",
+  "invitedBy": "Invited by",
+  "friends": "Friends",
+  "searchUsers": "Search Users",
+  "searchUsersHint": "Search by name or email",
+  "noUsersFound": "No users found",
+  "friendAdded": "Friend added successfully",
+  "errorAddingFriend": "Error adding friend",
+  "errorSearchingUsers": "Error searching users",
+  "removeFriend": "Remove Friend",
+  "removeFriendConfirmation": "Are you sure you want to remove this friend?",
+  "friendRemoved": "Friend removed successfully",
+  "errorRemovingFriend": "Error removing friend",
+  "noFriends": "No friends yet",
+  "errorLoadingFriends": "Error loading friends list",
+  "addFriend": "Add Friend",
+  "associationCreated": "Association created successfully",
+  "@associationCreated": {
+    "description": "Success message shown when an association is created"
+  },
+  "bankAccount": "Bank Account",
+  "@bankAccount": {
+    "description": "Label for bank account field"
+  },
+  "cliqName": "CliQ Name",
+  "@cliqName": {
+    "description": "Label for CliQ name field"
+  },
+  "cliqNumber": "CliQ Number",
+  "@cliqNumber": {
+    "description": "Label for CliQ number field"
+  },
+  "noPaymentInfo": "No payment information available",
+  "@noPaymentInfo": {
+    "description": "Message shown when no payment information is available"
+  },
+  "editPaymentInfo": "Edit Payment Information",
+  "@editPaymentInfo": {
+    "description": "Title for payment information edit dialog"
+  },
+  "paymentInfoUpdated": "Payment information updated successfully",
+  "@paymentInfoUpdated": {
+    "description": "Success message shown when payment information is updated"
+  },
+  "manageAdmins": "Manage Admins",
+  "@manageAdmins": {
+    "description": "Title for the manage admins page"
+  },
+  "paymentReminders": "Payment Reminders",
+  "remindMe": "Remind me",
+  "daysBeforePayment": "days before payment",
+  "reminderDaysBefore": "Reminder Days Before",
+  "days": "days",
+  "adminNotifications": "Admin Notifications",
+  "associationUpdates": "Association Updates",
+  "messageNotifications": "Message Notifications",
+  "enableNotifications": "Enable Notifications",
+  "notificationSettings": "Notification Settings",
+  "savePreferences": "Save Preferences",
+  "preferencesSaved": "Preferences saved successfully",
+  "failedToSavePreferences": "Failed to save preferences",
+  "preferencesUpdated": "Preferences updated successfully",
+  "bankAccountNumber": "Bank Account Number",
+  "profileDetails": "Profile Details",
+  "fullName": "Full Name",
+  "phoneNumber": "Phone Number",
+  "optional": "Optional",
+  "invitedTo": "Invited to",
+  "jod": "JOD",
+  "sar": "SAR",
+  "aed": "AED",
+  "invitationAccepted": "Invitation accepted",
+  "@invitationAccepted": {
+    "description": "Message shown when an invitation is accepted"
+  },
+  "invitationDeclined": "Invitation declined",
+  "@invitationDeclined": {
+    "description": "Message shown when an invitation is declined"
+  },
+  "errorLoadingNotifications": "Error loading notifications",
+  "@errorLoadingNotifications": {
+    "description": "Error message shown when notifications fail to load"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Button text for retrying a failed operation"
+  },
+  "friendRequestAccepted": "Friend request accepted",
+  "@friendRequestAccepted": {
+    "description": "Message shown when a friend request is accepted"
+  },
+  "friendRequestDeclined": "Friend request declined",
+  "@friendRequestDeclined": {
+    "description": "Message shown when a friend request is declined"
+  },
+  "noNotifications": "No notifications",
+  "friendRequest": "Friend request",
+  "paymentReminder": "Payment Reminder",
+  "notification": "Notification",
+  "errorLoadingUser": "Error loading user data",
+  "sendReminder": "Send Reminder",
+  "reminderMessage": "Please make your payment for",
+  "reminderSent": "Reminder sent successfully",
+  "errorSendingReminder": "Error sending reminder",
+  "swapMonth": "Swap Month",
+  "@swapMonth": {
+    "description": "Title for the swap month dialog"
+  },
+  "noOtherMembers": "No other members available to swap with",
+  "@noOtherMembers": {
+    "description": "Message shown when there are no other members to swap with"
+  },
+  "currentMonth": "Current Month",
+  "@currentMonth": {
+    "description": "Label for the current month in member details"
+  },
+  "errorSwappingMonths": "Error swapping months",
+  "@errorSwappingMonths": {
+    "description": "Error message shown when month swap fails"
+  },
+  "justNow": "Just now",
+  "@justNow": {
+    "description": "Text shown for very recent notifications"
+  },
+  "minutesAgo": "minutes ago",
+  "@minutesAgo": {
+    "description": "Text shown for notifications from minutes ago"
+  },
+  "hoursAgo": "hours ago",
+  "@hoursAgo": {
+    "description": "Text shown for notifications from hours ago"
+  },
+  "daysAgo": "days ago",
+  "@daysAgo": {
+    "description": "Text shown for notifications from days ago"
+  },
+  "weeksAgo": "weeks ago",
+  "@weeksAgo": {
+    "description": "Text shown for notifications from weeks ago"
+  },
+  "monthsAgo": "months ago",
+  "@monthsAgo": {
+    "description": "Text shown for notifications from months ago"
+  },
+  "yearsAgo": "years ago",
+  "@yearsAgo": {
+    "description": "Text shown for notifications from years ago"
+  },
+  "friendRequestSent": "Friend request sent",
+  "pendingRequest": "Pending request",
+  "requestSent": "Request sent",
+  "errorLoadingPreferences": "Error loading notification preferences",
+  "errorDeletingNotification": "Error deleting notification",
+  "friendRequestRejected": "Friend request rejected",
+  "associationInviteAccepted": "Association invite accepted",
+  "associationInviteRejected": "Association invite rejected"
+} 

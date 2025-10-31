@@ -1,0 +1,121 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+    
+    function isAssociationMember(associationData) {
+      return request.auth.uid in associationData.memberIds;
+    }
+    
+    function isAssociationAdmin(associationData) {
+      return request.auth.uid == associationData.adminId;
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Allow create during sign-up
+      allow create: if isAuthenticated() && isOwner(userId);
+      // Allow read for authenticated users
+      allow read: if isAuthenticated();
+      // Allow update only by the owner
+      allow update: if isAuthenticated() && (isOwner(userId) || 
+        // Allow updates for friend request operations
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['friends']) ||
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['pendingFriendRequests']) ||
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['sentFriendRequests']) ||
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['associations'])));
+      allow delete: if false; // Never allow deletion
+      
+      // User's friend requests subcollection
+      match /friend_requests/{requestId} {
+        allow read: if isAuthenticated() && (isOwner(userId) || isOwner(requestId));
+        allow create: if isAuthenticated();
+        allow update: if isAuthenticated() && (isOwner(userId) || isOwner(requestId));
+        allow delete: if isAuthenticated() && (isOwner(userId) || isOwner(requestId));
+      }
+      
+      // User's invitations subcollection
+      match /invitations/{invitationId} {
+        allow read: if isAuthenticated() && (isOwner(userId) || isOwner(resource.data.recipientId));
+        allow create: if isAuthenticated();
+        allow update: if isAuthenticated() && (isOwner(userId) || isOwner(resource.data.recipientId));
+        allow delete: if isAuthenticated() && (isOwner(userId) || isOwner(resource.data.recipientId));
+      }
+
+      // User's notifications subcollection
+      match /notifications/{notificationId} {
+        allow read: if isAuthenticated() && (isOwner(userId) || isOwner(resource.data.recipientId));
+        allow create: if isAuthenticated();
+        allow update: if isAuthenticated() && (isOwner(userId) || isOwner(resource.data.recipientId));
+        allow delete: if isAuthenticated() && (isOwner(userId) || isOwner(resource.data.recipientId));
+      }
+    }
+    
+    // Usernames collection (for uniqueness check)
+    match /usernames/{username} {
+      // Allow read to check if username exists
+      allow read: if true;
+      // Allow create during sign-up if authenticated
+      allow create: if isAuthenticated();
+      allow update, delete: if false; // Never allow updates or deletions
+    }
+    
+    // Associations collection
+    match /associations/{associationId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && (
+        isAssociationAdmin(resource.data) || 
+        isAssociationMember(resource.data) ||
+        // Allow updates for adding new members
+        (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['memberIds']))
+      );
+      allow delete: if isAuthenticated() && isAssociationAdmin(resource.data);
+      
+      // Association's invitations subcollection
+      match /invitations/{invitationId} {
+        allow read: if isAuthenticated();
+        allow create: if isAuthenticated() && isAssociationAdmin(get(/databases/$(database)/documents/associations/$(associationId)).data);
+        allow update: if isAuthenticated() && (
+          isAssociationAdmin(get(/databases/$(database)/documents/associations/$(associationId)).data) ||
+          isOwner(invitationId)
+        );
+        allow delete: if isAuthenticated() && isAssociationAdmin(get(/databases/$(database)/documents/associations/$(associationId)).data);
+      }
+    }
+    
+    // Financial commitments collection
+    match /financial_commitments/{commitmentId} {
+      allow read: if isAuthenticated() && isOwner(resource.data.userId);
+      allow create: if isAuthenticated() && isOwner(request.resource.data.userId);
+      allow update: if isAuthenticated() && isOwner(resource.data.userId);
+      allow delete: if isAuthenticated() && isOwner(resource.data.userId);
+    }
+
+    // Notifications collection
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated() && (
+        request.auth.uid == resource.data.recipientId ||
+        request.auth.uid == resource.data.senderId
+      );
+      allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && (
+        request.auth.uid == resource.data.recipientId ||
+        request.auth.uid == resource.data.senderId ||
+        // Allow updates for invitation-related operations
+        (resource.data.type == 'invitation' && request.auth.uid == resource.data.recipientId)
+      );
+      allow delete: if isAuthenticated() && (
+        request.auth.uid == resource.data.recipientId ||
+        request.auth.uid == resource.data.senderId
+      );
+    }
+  }
+} 

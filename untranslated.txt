@@ -1,0 +1,13 @@
+{
+  "ar": [
+    "friendRequest",
+    "friendRequestSent",
+    "pendingRequest",
+    "requestSent",
+    "errorLoadingPreferences",
+    "errorDeletingNotification",
+    "friendRequestRejected",
+    "associationInviteAccepted",
+    "associationInviteRejected"
+  ]
+}
